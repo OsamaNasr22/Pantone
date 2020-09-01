@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Pantone colors</title>
+    <link rel="stylesheet" href="css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<!-- FONTS -->
+
+<!-- PAGE STUFF -->
+<div id="app">
+    <div class="grid">
+        <div class="colorBox" :style="{ backgroundColor: `rgb(${color.background.r}, ${color.background.g}, ${color.background.b})`}" v-for="color in pantoneColors">Pantone {{ color.pantoneKey }}</div>
+    </div>
+
+<!--    This for one element-->
+
+    <br><br><br><br>
+    <div class="grid">
+        <div class="colorBox" :style="{ backgroundColor:
+        `rgb(${justOneColor.background.r}, ${justOneColor.background.g},
+        ${justOneColor.background.b})`}">Pantone {{ justOneColor.pantoneKey }}</div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
