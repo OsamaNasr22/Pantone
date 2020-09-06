@@ -10,24 +10,23 @@
 <body>
 
 <!-- FONTS -->
-
 <!-- PAGE STUFF -->
-<div id="app">
-    <div class="grid">
-        <div class="colorBox" :style="{ backgroundColor: `rgb(${color.background.r}, ${color.background.g}, ${color.background.b})`}" v-for="color in pantoneColors">Pantone {{ color.pantoneKey }}</div>
-    </div>
-
-<!--    This for one element-->
-
-    <br><br><br><br>
-    <div class="grid">
-        <div class="colorBox" :style="{ backgroundColor:
-        `rgb(${justOneColor.background.r}, ${justOneColor.background.g},
-        ${justOneColor.background.b})`}">Pantone {{ justOneColor.pantoneKey }}</div>
-    </div>
+<div id="hamada">
+    <p style="font-weight:bold;" fostyle="color: rgb-icc(255,255,0, #SpotColor,'Pantone 355-Green C',0.30, #CMYK,.7,0,0.5,.6);">
+        This paragraph is <code>rgb-icc(255,255,0, #SpotColor,'Pantone 355-Green C',0.30,
+        #CMYK,.7,0,0.5,.6)</code>. You will not see this is the HTML page as it is a
+        Pantone color. The fallback color is CMYK so it also will not work in the HTML
+        browser. The actual Pantone color will not appear in the view of the PDF because PDF
+        cannot recognize all Pantone colors nor represent them on screen. But it is
+        <i>inside</i> the PDF. The rendering engine will insert the proper Pantone color
+        specifier in the PDF and use the fallback CMYK color specified to render in the PDF
+        for viewing. A printer given this PDF which supports Pantone color would use the
+        specified Pantone color. This uses the <code>fostyle</code> attribute to take
+        advantage of things that the HTML browser cannot do.</p>
 </div>
+<a href="#" onclick="return xepOnline.Formatter.Format('hamada', {render:'download'});">As PDF</a>
 
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+<script src="js/jqPlugin.js"></script>
 </body>
 </html>
